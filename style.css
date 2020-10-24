@@ -1,0 +1,13 @@
+#container {
+  height: 500px;
+  width: 1200px;
+  background-color: lightblue;
+  margin: 20px;
+}
+
+#ball {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background: red;
+}
