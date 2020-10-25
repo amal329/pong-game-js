@@ -5,6 +5,22 @@
   margin: 20px;
 }
 
+#score {
+  width: 100px;
+  height: 50px;
+  margin-left: 1100px;
+  color: black;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 3em;
+  text-align: center;
+}
+
+#paddle {
+  height: 100px;
+  width: 15px;
+  background-color: black;
+}
+
 #ball {
   height: 50px;
   width: 50px;
