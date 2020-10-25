@@ -23,35 +23,55 @@ function updateScore(){
 function resetScore(){
     scoreBoard.innerText=0;
 }
-
+var test=true;
 function moveBall(){
-    var xx=parseInt(ball.style.left),yy=parseInt(ball.style.top);
+
+    var ballLeft=parseInt(ball.style.left),ballTop=parseInt(ball.style.top);
+    var ballRadius=25;
+    var ballRight=ballLeft+(2*ballRadius),ballBottom=ballTop+(2*ballRadius);
     var paddleWidth=15,paddleHeight=100;
     var paddleTop=parseInt(paddle.style.top),paddleBottom=parseInt(paddle.style.top)+paddleHeight;
-    if(xx<=30+paddleWidth){
-        if(xx>30 && yy+50>paddleTop && yy<paddleBottom){
-            console.log("Reflected off the length");
+    
+    if(ballLeft<=(30+paddleWidth)){
+
+        if(test){
+            console.log("Ball from"+ballTop+" to "+ballBottom);
+            console.log("Paddle from"+paddleTop+" to "+paddleBottom);
+            test=false;
+        }
+
+        if((ballBottom>=paddleTop && ballBottom<=paddleBottom) || (ballTop>=paddleTop && ballTop<=paddleBottom)){
+            console.log('first case');
             dir[0]=-dir[0];
             updateScore();
         }
-        else if(xx>30 && yy+50==paddleTop && yy==paddleBottom){
-            console.log("Reflected off the breadth");
+        else if((paddleBottom<=ballTop) || (paddleTop<=ballBottom)){
+            // console.log(ballBottom+" "+ballTop);
+            // console.log(paddleBottom+" "+paddleTop);
+            console.log('second case');
             dir[1]=-dir[1];
+            updateScore();
         }
-        else if(xx<30){
+
+        if(ballLeft<=30){
+            console.log('third case');
             clearInterval(moveId);
-            console.log("Ball is at "+yy);
+            console.log("Ball is at "+ballLeft);
             console.log("Paddle is between "+paddleTop+" and "+paddleBottom);
             alert('GAME OVER');
             startGame();
         }
     }
-    else if(xx>1170){
+    if(ballLeft>30+paddleWidth){
+        test=true;
+    }
+
+    if(ballRight>1220){
         dir[0]=-dir[0];
     }
-    else if(yy<50 || yy>500){
+    if(ballTop<50 || ballBottom>550){
         dir[1]=-dir[1];
-    }    
+    }  
 
     ball.style.left=parseInt(ball.style.left)+dir[0]+'px';
     ball.style.top=parseInt(ball.style.top)+dir[1]+'px';
