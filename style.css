@@ -1,4 +1,5 @@
 body {
+  margin: 0;
   background-color: rgb(6, 15, 51);
 }
 
@@ -6,10 +7,15 @@ body {
   height: 500px;
   width: 1200px;
   background-color: #000;
-  margin: 20px;
+  margin-top: 50px;
+  margin-left: 30px;
+  text-align: center;
+  font-size: larger;
+  font-family: "Times New Roman", Times, serif;
+  color: #fff;
 }
 
-#score {
+#score1 {
   width: 100px;
   height: 50px;
   margin-left: 500px;
@@ -18,6 +24,31 @@ body {
   font-size: 3em;
   text-align: center;
   float: left;
+}
+
+#menu {
+  width: 1000px;
+  height: 200px;
+  position: absolute;
+  display: block;
+  margin-left: 100px;
+  margin-top: 150px;
+  float: left;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 20px;
+  letter-spacing: 3px;
+  text-align: center;
+  background-color: #000;
+}
+
+#menu input {
+  width: 200px;
+  height: 50px;
+  background-color: #fff;
+  color: #000;
+  font-size: larger;
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #score2 {
@@ -32,10 +63,11 @@ body {
   float: left;
 }
 
-#paddle {
+#paddle1 {
   height: 100px;
   width: 15px;
   background-color: #fff;
+  position: absolute;
 }
 
 #mid {
@@ -49,7 +81,7 @@ body {
   width: 15px;
   background-color: #fff;
   position: absolute;
-  /* margin-left: 1185px; */
+  margin-left: 1185px;
 }
 
 #ball {
