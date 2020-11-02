@@ -23,7 +23,7 @@ function initGame() {
 
 function startNewGame(){
     if(parseInt(playerScore.innerText)==3 || parseInt(computerScore.innerText)==3){
-        var winMessage=(parseInt(playerScore.innerText)==3)?'You Won :D':'Computer won :(';
+        var winMessage=(parseInt(playerScore.innerText)==3)?'You Won :p':'Computer won :(';
 
         clearInterval(moveId);
         menuText.innerHTML=winMessage;
